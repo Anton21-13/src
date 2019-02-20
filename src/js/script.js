@@ -86,7 +86,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function calcGoods(i) {
     const items = cartWrapper.querySelectorAll('.goods__item');
+      empty = cartWrapper.querySelector('.empty');
     badge.textContent = i + items.length;
+      if ( items.length === 0) {
+        empty.style.display = 'block';
+      } else { 
+        empty.style.display = 'none'; 
+      }
   }
 
   function calcTotal() {
